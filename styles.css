@@ -1,0 +1,313 @@
+/* --- Estilos Base para Todos los Botones --- */
+.boton {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease; /* Transición suave */
+    display: block; /* Para que ocupen su propia línea */
+    text-align: center;
+    width: 200px;
+}
+
+/* --- Botón 1: Enfocado en :hover (Al pasar el ratón) --- */
+#boton1 {
+    background-color: #007bff;
+    color: white;
+}
+
+#boton1:hover {
+    background-color: #ff9800; /* CAMBIO: Color naranja llamativo */
+    transform: scale(1.1); /* CAMBIO: Aumenta de tamaño */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* CAMBIO: Sombra marcada */
+}
+
+/* Los estados :focus y :active de este botón son neutros */
+#boton1:focus, #boton1:active {
+    outline: 2px solid #5cb85c;
+}
+
+/* --- Botón 2: Enfocado en :focus (Al ser seleccionado o tabulado) --- */
+#boton2 {
+    background-color: #28a745;
+    color: white;
+}
+
+#boton2:focus {
+    outline: 5px solid #dc3545; /* CAMBIO: Borde rojo grueso y destacado */
+    outline-offset: 2px;
+    background-color: #218838;
+}
+
+/* Los estados :hover y :active de este botón son neutros */
+#boton2:hover {
+    opacity: 0.9;
+}
+#boton2:active {
+    transform: translateY(1px);
+}
+
+/* --- Botón 3: Enfocado en :active (Al ser presionado) --- */
+#boton3 {
+    background-color: #ffc107;
+    color: #333;
+}
+
+#boton3:active {
+    background-color: #6c757d; /* CAMBIO: Fondo gris oscuro */
+    color: white; /* CAMBIO: Texto blanco */
+    transform: rotate(5deg); /* CAMBIO: Gira ligeramente al presionarlo */
+    border-color: #6c757d;
+}
+
+/* Los estados :hover y :focus de este botón son neutros */
+#boton3:hover {
+    opacity: 0.8;
+}
+#boton3:focus {
+    outline: 2px dashed #007bff;
+}
+<style>
+    /* Estilo base para todos los elementos de la lista */
+    ul {
+        list-style-type: none;
+        padding: 0;
+        width: 300px;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    li {
+        padding: 10px;
+        background-color: #f4f4f9;
+        margin-bottom: 2px;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* --- Pseudoclase 1: :first-child --- */
+    li:first-child {
+        background-color: #28a745; /* Fondo Verde */
+        color: white;
+        font-weight: bold;
+    }
+
+    /* --- Pseudoclase 2: :last-child --- */
+    li:last-child {
+        background-color: #dc3545; /* Fondo Rojo */
+        color: white;
+        font-weight: bold;
+    }
+
+    /* --- Pseudoclase 3: :nth-child(n) --- */
+    /* Seleccionando los elementos pares (2, 4, 6, ...) */
+    li:nth-child(2n) {
+        background-color: #ffc107; /* Fondo Amarillo */
+        color: #333;
+    }
+    
+    /* Seleccionando el tercer elemento específicamente */
+    li:nth-child(3) {
+        background-color: #007bff; /* Fondo Azul */
+        color: white;
+        border: 2px solid #0056b3;
+    }
+</style>
+/* --- Estilos Base --- */
+body {
+    font-family: 'Times New Roman', serif;
+    color: #444;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+main {
+    width: 70%;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#parrafo-ejemplo {
+    font-size: 19px;
+    text-align: justify;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* =================================================== */
+/* --- APLICACIÓN DETALLADA DE PSEUDOELEMENTOS --- */
+/* =================================================== */
+
+/* 1. ::first-letter (Capitular) */
+#parrafo-ejemplo::first-letter {
+    /* * **Propósito:** Crea un efecto de "Capitular" o letra inicial grande, 
+     * común en periódicos y revistas. 
+     */
+    
+    font-size: 4em;             /* Aumenta el tamaño de la fuente cuatro veces. */
+    font-family: 'Playfair Display', serif; /* Cambia la fuente para que sea más decorativa. */
+    color: #a82e00;             /* Un color terracota o marrón oscuro. */
+    font-weight: bold;
+    
+    /* Configuración para que el texto fluya alrededor (efecto revista) */
+    float: left;                /* Saca la letra del flujo normal y la coloca a la izquierda. */
+    margin-right: 15px;         /* Espacio a la derecha para separar la letra del texto siguiente. */
+    padding-top: 5px;           /* Ajuste vertical para alinearla mejor. */
+    line-height: 1;             /* Asegura que la altura de la línea de la letra sea mínima. */
+}
+
+
+/* 2. ::first-line (Énfasis en la introducción) */
+#parrafo-ejemplo::first-line {
+    /* * **Propósito:** Resalta la primera línea para actuar como una "intro" o 
+     * resumen visual, captando la atención del lector.
+     */
+     
+    font-weight: 700;           /* Hace el texto de la primera línea más grueso (Negrita). */
+    color: #004c99;             /* Azul oscuro para el texto. */
+    letter-spacing: 0.5px;      /* Añade un sutil espacio entre las letras para mejor lectura. */
+    
+    /* Nota clave: 
+     * Esta selección es **dinámica**. Si el usuario redimensiona la ventana, 
+     * el CSS se aplicará automáticamente a la nueva extensión de la primera línea.
+     */
+}
+/* --- Estilos Base --- */
+body {
+    font-family: 'Times New Roman', serif;
+    color: #444;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+main {
+    width: 70%;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#parrafo-ejemplo {
+    font-size: 19px;
+    text-align: justify;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* =================================================== */
+/* --- APLICACIÓN DE PSEUDOELEMENTOS --- */
+/* =================================================== */
+
+/* 1. ::first-letter (Efecto Capitular) */
+#parrafo-ejemplo::first-letter {
+    /* **Propósito:** Letra inicial grande y decorativa */
+    
+    font-size: 4em;             
+    font-family: 'Playfair Display', serif; 
+    color: #a82e00;             /* Color terracota/marrón oscuro */
+    font-weight: bold;
+    
+    /* Propiedades para el flujo de texto (float) */
+    float: left;                
+    margin-right: 15px;         
+    padding-top: 5px;           
+    line-height: 1;             
+}
+
+
+/* 2. ::first-line (Énfasis en la Introducción) */
+#parrafo-ejemplo::first-line {
+    /* **Propósito:** Resaltar la línea inicial */
+     
+    font-weight: 700;           /* Negrita */
+    color: #004c99;             /* Azul oscuro */
+    letter-spacing: 0.5px;      /* Espaciado sutil */
+    
+    /* Nota: Esta selección es dinámica y se adapta al ancho de la ventana. */
+}
+/* --- Estilos Generales --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #eef1f4;
+    display: block
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.contenedor-tarjetas {
+    display: inline
+    gap: 30px; /* Espacio entre las tarjetas */
+    flex-wrap: wrap; /* Para que las tarjetas se envuelvan en pantallas pequeñas */
+    justify-content: center;
+}
+
+/* --- Estilos Base de la Tarjeta --- */
+.tarjeta {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    position: relative; /* Necesario para posicionar pseudoelementos */
+    overflow: hidden; /* Asegura que las decoraciones no se desborden */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para hover */
+}
+
+.tarjeta h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.tarjeta p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+/* =================================================== */
+/* --- PSEUDOELEMENTOS (Decoración Estática) --- */
+/* =================================================== */
+
+/* Decoración superior para la tarjeta */
+.tarjeta::before {
+    content: ''; /* Obligatorio para pseudoelementos */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px; /* Altura de la banda decorativa */
+    background: linear-gradient(to right, #4CAF50, #8BC34A); /* Gradiente verde */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    z-index: 1; /* Asegura que esté por encima del contenido si hay solapamiento */
+}
+
+/* Decoración inferior para la tarjeta */
+.tarjeta::after {
+    content: ''; /* Obligatorio para pseudoelementos */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 5px; /* Altura de la banda decorativa inferior */
+    background-color: #f0f0f0; /* Color gris claro */
+    border-bottom-left-radius:
